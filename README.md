@@ -1,5 +1,22 @@
 # Mac OS X Keylogger
 
+オリジナルはこちら
+https://github.com/caseyscarborough/keylogger
+
+keycodeを10進数でプリントするよう少しコード修正したものです。
+```
+$ touch /var/log/keystroke.log
+$ chmod 644 /var/log/keystroke.log
+$ git clone https://github.com/take-i/keylogger-macos.git && cd keylogger-macos/
+$ make
+$ sudo ./keylogger
+```
+ログは数字でプリントされます。
+```
+$ tail -f /var/log/keystroke.log
+```
+以下、オリジナルの説明。
+
 This repository holds the code for a simple and easy to use keylogger for Mac OS X. It is not meant to be malicious, and is written as a proof of concept. There is not a lot of information on keyloggers or implementing them on Mac OS X, and most of the ones I've seen do not work as indicated. This project aims to be a simple implementation on how it can be accomplished on OS X.
 
 > Note: This keylogger is currently unable to capture secure input such as passwords. See issue #3 for more information.
