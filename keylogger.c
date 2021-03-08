@@ -60,8 +60,12 @@ CGEventRef CGEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef e
     // Retrieve the incoming keycode.
     CGKeyCode keyCode = (CGKeyCode) CGEventGetIntegerValueField(event, kCGKeyboardEventKeycode);
 
+	// print keycode.
+	char buf[12];
+	snprintf(buf, 12, "%d", keyCode);
+	fprintf(logfile, "%hhu", keyCode);
     // Print the human readable key to the logfile.
-    fprintf(logfile, "%s", convertKeyCode(keyCode));
+    // fprintf(logfile, "%s", convertKeyCode(keyCode));
     fflush(logfile);
 
     return event;
